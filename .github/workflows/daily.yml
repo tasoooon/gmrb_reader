@@ -1,17 +1,17 @@
-name: Daily Guangming Push via ntfy
+name: Daily Guangming Push
 
 on:
   schedule:
-    # UTC 时间，北京时间早上 8 点 = UTC 0 点
-    # 避开整点，用 17 分这类非整点分钟更稳
-    - cron: '17 0 * * *'
+    # 每天 UTC 2:17 (北京时间 10:17) 自动运行
+    - cron: '17 2 * * *'
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
