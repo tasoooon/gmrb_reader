@@ -1,9 +1,8 @@
 name: Daily Guangming Push
 
 on:
-  schedule:
-    # 每天 UTC 2:17 (北京时间 10:17) 自动运行
-    - cron: '17 2 * * *'
+  # schedule:
+  #   - cron: '17 2 * * *'   <-- 这两行前面加了 #，就代表关闭 GitHub 自带的定时
   workflow_dispatch:
 
 jobs:
